@@ -1,0 +1,13 @@
+{
+  "short_name": "Drum Machine",
+  "name": "Drum Machine",
+  "description": "Drum Machine Created by AvivAbachi@gmail.com",
+  "start_url": ".",
+  "orientation": "portrait",
+  "display": "standalone",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["music"]
+}

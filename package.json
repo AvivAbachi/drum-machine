@@ -1,0 +1,35 @@
+{
+  "name": "drum-machine",
+  "version": "1.0.0",
+  "description": "Drum Machine",
+  "homepage": "/",
+  "author": "Aviv Abachi <avivabachi@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@craco/craco": "^5.6.4",
+    "antd": "4.6.1",
+    "craco-less": "^1.17.0",
+    "react": "^17.0.0-rc.1",
+    "react-dom": "^17.0.0-rc.1",
+    "react-scripts": "3.4.3"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.49",
+    "@types/react-dom": "^16.9.8",
+    "typescript": "^3.9.7"
+  },
+  "scripts": {
+    "start-craco": "craco start",
+    "build-craco": "craco build",
+    "test-craco": "craco test",
+    "serve": "serve -s build",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": [
+    "defaults",
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
