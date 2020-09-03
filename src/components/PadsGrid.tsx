@@ -26,17 +26,14 @@ const PadsGrid: React.FC<props> = ({bankKit, changeDisplay, power, volume}) => {
 
   // Set Volume
   const newVolume = volume / 100;
-
   useEffect(() => {
-    padRefs.forEach((pad: padRef) => {
-      if (pad.current !== null) pad.current.volume = newVolume;
-    });
-  }, [newVolume, padRefs]);
+    padRefs.forEach((pad: padRef) => (pad.current !== null ? (pad.current.volume = newVolume) : null));
+  }, [volume, newVolume, padRefs]);
 
   // Pad Control
   const pressPad = useCallback(
     (index: number) => {
-      if (padRefs[index] !== null && power) {
+      if (padRefs[index] !== null) {
         const audio = padRefs[index]?.current as HTMLAudioElement;
         audio.parentElement?.setAttribute('data-click', 'true');
         audio.currentTime = 0;
@@ -44,7 +41,7 @@ const PadsGrid: React.FC<props> = ({bankKit, changeDisplay, power, volume}) => {
         changeDisplay(bankKit[index].nameTrigger);
       }
     },
-    [padRefs, bankKit, changeDisplay, power]
+    [padRefs, bankKit, changeDisplay]
   );
 
   const releasePad = useCallback(
@@ -54,17 +51,22 @@ const PadsGrid: React.FC<props> = ({bankKit, changeDisplay, power, volume}) => {
     [padRefs]
   );
 
+  // Stop Pad Sound On Power Off
+  useEffect(() => {
+    if (!power) padRefs.forEach((pad: padRef) => pad.current?.pause());
+  }, [power, padRefs]);
+
   // Keyboard
   // Ped Key - Q, W, E, A, S, D, Z, X, C
   const keyboardPress = useCallback(
     (event: KeyboardEvent) => {
       const {keyIndex, canClick} = checkKey(event);
-      if (keyIndex !== -1 && canClick) {
+      if (keyIndex !== -1 && canClick && power) {
         blockDefaultInput(event);
         pressPad(keyIndex);
       }
     },
-    [pressPad]
+    [pressPad, power]
   );
 
   const keyboardRelease = useCallback(
