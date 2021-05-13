@@ -1,16 +1,16 @@
-import React from 'react';
+import { FC, memo } from 'react';
 
 interface props {
-  disabled: boolean;
-  value: string;
+	disabled: boolean;
+	value: string;
 }
 
-const Display: React.FC<props> = ({disabled, value}) => {
-  return (
-    <div id='display' className={'drum-display' + (disabled ? ' disable' : '')}>
-      <span>{value}</span>
-    </div>
-  );
+const Display: FC<props> = ({ disabled, value }) => {
+	return (
+		<div id='display' className={'drum-display' + (disabled ? ' disable' : '')}>
+			<span>{value}</span>
+		</div>
+	);
 };
 
-export default React.memo(Display);
+export default memo(Display);

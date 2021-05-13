@@ -1,6 +1,6 @@
 @import '~antd/dist/antd.less';
 
-// Theme Ant-Desing
+// Theme Ant-Design
 @primary-color: #1890ff;
 @link-color: #fffffff9;
 @disabled-color: #096dd940;
@@ -19,126 +19,126 @@
 
 // App Style
 .ant-layout {
-  background-color: @background;
-  height: 100vh !important;
-  min-height: 756px !important;
+	background-color: @background;
+	height: 100vh !important;
+	min-height: 756px !important;
 }
 
 .ant-layout-header {
-  margin-bottom: 24px !important;
-  box-shadow: @box-shadow-base;
+	margin-bottom: 24px !important;
+	box-shadow: @box-shadow-base;
 
-  h1 {
-    color: @text-color;
-    font-size: 2.5em;
-    text-align: center;
-  }
+	h1 {
+		color: @text-color;
+		font-size: 2.5em;
+		text-align: center;
+	}
 }
 
 .ant-layout-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100% !important;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100% !important;
 }
 
 .drum {
-  box-shadow: @box-shadow-base;
+	box-shadow: @box-shadow-base;
 }
 
 .drum-display {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  max-width: 240px;
-  height: 54px;
-  margin: 0 auto;
-  border-radius: @border-radius-base;
-  box-shadow: inset 0 0 10px @shadow-color;
-  background: @display-color;
-  font-size: 1.25em;
-  font-weight: 500;
-  transition: all 0.25s;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	max-width: 240px;
+	height: 54px;
+	margin: 0 auto;
+	border-radius: @border-radius-base;
+	box-shadow: inset 0 0 10px @shadow-color;
+	background: @display-color;
+	font-size: 1.25em;
+	font-weight: 500;
+	transition: all 0.25s;
 }
 
 .drum-display.disable {
-  background: @disabled-color;
+	background: @disabled-color;
 }
 
 .drum-panel {
-  width: 100%;
-  max-width: 365px;
-  margin: 24px auto;
+	width: 100%;
+	max-width: 365px;
+	margin: 24px auto;
 
-  > div {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    span {
-      margin-right: 8px;
-      color: @text-color-secondary;
-    }
-    // Volume Div
-    &:last-of-type > div {
-      width: 100%;
-    }
-    // Switch Div
-    &:first-of-type > div {
-      width: fit-content;
-      // Power Switch
-      &:first-of-type .ant-switch[aria-checked='false'] {
-        background-color: @power-switch-off;
-      }
-      // Bank Switch A
-      &:nth-of-type(2) .ant-switch[aria-checked='false'] {
-        background-color: @bank-switch-a;
-      }
-      // Bank Switch B
-      &:nth-of-type(2) .ant-switch[aria-checked='true'] {
-        background-color: @bank-switch-b;
-      }
-    }
-  }
+	> div {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		span {
+			margin-right: 8px;
+			color: @text-color-secondary;
+		}
+		// Volume Div
+		&:last-of-type > div {
+			width: 100%;
+		}
+		// Switch Div
+		&:first-of-type > div {
+			width: fit-content;
+			// Power Switch
+			&:first-of-type .ant-switch[aria-checked='false'] {
+				background-color: @power-switch-off;
+			}
+			// Bank Switch A
+			&:nth-of-type(2) .ant-switch[aria-checked='false'] {
+				background-color: @bank-switch-a;
+			}
+			// Bank Switch B
+			&:nth-of-type(2) .ant-switch[aria-checked='true'] {
+				background-color: @bank-switch-b;
+			}
+		}
+	}
 }
 
 .drum-pads-grid {
-  display: grid;
-  width: fit-content;
-  margin: 0 auto;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 24px;
+	display: grid;
+	width: fit-content;
+	margin: 0 auto;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 24px;
 }
 
 .drum-pad {
-  width: 20vw;
-  max-width: 128px;
-  height: 20vw;
-  max-height: 128px;
-  outline: 0;
-  border: 0;
-  border-radius: @border-radius-base;
-  box-shadow: @box-shadow-base;
-  background-color: @primary-color;
-  cursor: pointer;
-  font-size: 1.5em;
-  transition: 0.25s all !important;
+	width: 20vw;
+	max-width: 128px;
+	height: 20vw;
+	max-height: 128px;
+	outline: 0;
+	border: 0;
+	border-radius: @border-radius-base;
+	box-shadow: @box-shadow-base;
+	background-color: @primary-color;
+	cursor: pointer;
+	font-size: 1.5em;
+	transition: 0.25s all !important;
 
-  &[data-click='true'] {
-    box-shadow: none;
-    background-color: @active-color;
-    transform: scale(0.975);
-  }
+	&[data-click='true'] {
+		box-shadow: none;
+		background-color: @active-color;
+		transform: scale(0.975);
+	}
 
-  &:disabled {
-    box-shadow: none;
-    background: @disabled-color;
-    cursor: not-allowed;
-  }
+	&:disabled {
+		box-shadow: none;
+		background: @disabled-color;
+		cursor: not-allowed;
+	}
 }
 
 .ant-layout-footer {
-  background-color: @dark-background;
-  font-size: 1.25em !important;
-  text-align: center;
+	background-color: @dark-background;
+	font-size: 1.25em !important;
+	text-align: center;
 }
